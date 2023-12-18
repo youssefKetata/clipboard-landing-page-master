@@ -1,0 +1,269 @@
+:root {
+    --clr-primary-300: hsl(171, 66%, 44%);
+    --clr-primary-400: hsl(233, 100%, 69%);
+
+    --clr-neutral-400: hsl(210, 10%, 33%);
+    --clr-neutral-300: hsl(201, 11%, 66%);
+
+
+    --ff-primary: "Bai Jamjuree", sans-serif;
+
+    --fw-400: 400;
+    --fw-600: 600;
+
+    --fs-400: 1.125rem;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul,
+ol,
+a {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-300);
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.hero {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
+        url(./images/bg-header-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+}
+
+h1,
+h2 {
+    color: var(--clr-neutral-400);
+    font-weight: var(--fw-600);
+    text-align: center;
+}
+
+.hero__logo {
+    margin-block: 2rem;
+}
+
+.hero>p {
+    text-align: center;
+    max-width: 55ch;
+}
+
+.hero__cta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+.hero__cta--button {
+    border-radius: 40px;
+    padding-block: 1rem;
+    padding-inline: 2.5rem;
+    font-weight: var(--fw-600);
+    text-align: center;
+    box-shadow:
+        0px 10px 20px rgba(0, 0, 0, .2);
+
+
+}
+
+.green-button {
+    background-color: var(--clr-primary-300);
+    color: white;
+    box-shadow: 0px 3px 0 hsl(171, 66%, 34%);
+}
+
+.green-button:hover {
+    background-color: hsl(171, 76%, 44%);
+    color: white;
+}
+
+.blue-button {
+    background-color: var(--clr-primary-400);
+    color: white;
+    box-shadow: 0px 3px 0 hsl(233, 100%, 59%);
+}
+
+.blue-button:hover {
+    background-color: hsl(233, 100%, 73%);
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding-inline: 2rem;
+    margin-bottom: 5rem;
+}
+
+.overview-section {
+    text-align: center;
+    max-width: 50ch;
+}
+
+
+
+section {
+    margin-block: 5rem;
+}
+
+section>h2 {
+    margin-block: 1rem;
+}
+
+section>p {
+    text-align: center;
+    max-width: 50ch;
+    margin-block: 1rem;
+}
+
+.two-column-section {
+    display: grid;
+    gap: 2rem;
+    margin-block: 5rem;
+}
+
+.features {
+    padding: 0;
+}
+.features>li {
+    margin-block: 2.5rem;
+}
+.features>li>h2 {
+    margin-block: 0.5rem;
+}
+
+.access-feature>img {
+    margin-top: 4rem;
+}
+
+.features__section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    margin-block: 5rem;
+}
+
+.features__item{
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+}
+
+.features__item>img {
+    margin-block: 1rem;    
+}
+
+.sponsors>ul {
+    display: grid;
+    justify-items: center;
+    gap: 4rem;
+}
+
+footer {
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+    text-align: center;
+    padding-inline: 2rem;
+    margin-top: 5rem;
+    background-color: hsl(0, 0%, 96%);
+    padding-block: 4rem;
+}
+
+footer>img{
+    max-width: 15%;
+}
+
+footer>ul {
+    display: grid;
+    gap: 1.5rem;
+    color: var(--clr-neutral-400);
+}
+
+.contact {
+    display: flex;
+    gap: 2rem;
+}
+
+.attribution-section {
+    text-align: center;
+}
