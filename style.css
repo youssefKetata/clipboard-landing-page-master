@@ -190,7 +190,7 @@ section>h2 {
 }
 
 section>p {
-    margin-block: 1rem;
+    /* margin-block: 1rem; */
 }
 
 .two-column-section {
