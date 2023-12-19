@@ -1,10 +1,8 @@
 :root {
     --clr-primary-300: hsl(171, 66%, 44%);
     --clr-primary-400: hsl(233, 100%, 69%);
-
     --clr-neutral-400: hsl(210, 10%, 33%);
     --clr-neutral-300: hsl(201, 11%, 66%);
-
 
     --ff-primary: "Bai Jamjuree", sans-serif;
 
@@ -13,6 +11,7 @@
 
     --fs-400: 1.125rem;
 
+    --main-padding-inline: 2rem;
 }
 
 *,
@@ -37,9 +36,11 @@ dd {
 ul,
 ol,
 a {
-    list-style: none;
+    
     text-decoration: none;
     padding: 0;
+    all: unset;
+    list-style: none;
 }
 
 a {
@@ -112,6 +113,9 @@ h2 {
     font-weight: var(--fw-600);
     text-align: center;
 }
+h2 {
+    margin-block: .5rem;
+}
 
 .hero__logo {
     margin-block: 2rem;
@@ -138,8 +142,10 @@ h2 {
     text-align: center;
     box-shadow:
         0px 10px 20px rgba(0, 0, 0, .2);
+}
 
-
+.hero__cta--button:hover {
+    cursor: pointer;
 }
 
 .green-button {
@@ -169,19 +175,14 @@ main {
     flex-direction: column;
     align-items: center;
     align-content: center;
-    padding-inline: 2rem;
     margin-bottom: 5rem;
 }
 
-.overview-section {
-    text-align: center;
-    max-width: 50ch;
-}
-
-
-
 section {
-    margin-block: 5rem;
+    margin-block: 2rem;
+    text-align: center;
+    padding-inline: var(--main-padding-inline);
+    
 }
 
 section>h2 {
@@ -189,8 +190,6 @@ section>h2 {
 }
 
 section>p {
-    text-align: center;
-    max-width: 50ch;
     margin-block: 1rem;
 }
 
@@ -200,12 +199,10 @@ section>p {
     margin-block: 5rem;
 }
 
-.features {
-    padding: 0;
-}
 .features>li {
     margin-block: 2.5rem;
 }
+
 .features>li>h2 {
     margin-block: 0.5rem;
 }
@@ -215,27 +212,31 @@ section>p {
 }
 
 .features__section {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     text-align: center;
     gap: 2rem;
     margin-block: 5rem;
 }
 
-.features__item{
+.features__item {
     display: grid;
     justify-items: center;
     gap: 1rem;
 }
 
 .features__item>img {
-    margin-block: 1rem;    
+    margin-block: 1rem;
 }
 
 .sponsors>ul {
     display: grid;
     justify-items: center;
     gap: 4rem;
+    margin-block: 4rem;
+}
+
+.cta-section {
+    margin-bottom: 4rem;
 }
 
 footer {
@@ -249,14 +250,28 @@ footer {
     padding-block: 4rem;
 }
 
-footer>img{
+footer>img {
     max-width: 15%;
 }
 
 footer>ul {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
     color: var(--clr-neutral-400);
+}
+
+footer>ul>li:hover,
+.contact>a:hover{
+    cursor: pointer;
+    color: var(--clr-primary-300);
+}
+
+.contact>a>svg{
+    fill: #4C545C;
+}
+.contact>a>svg:hover {
+    fill: var(--clr-primary-300) !important;
 }
 
 .contact {
@@ -266,4 +281,119 @@ footer>ul {
 
 .attribution-section {
     text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        padding-block: 5rem;
+        padding-inline: 5rem;
+    }
+
+    .hero__cta {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+
+    .hero__cta--button {
+        padding-inline: 3rem;
+    }
+
+    .hero__logo {
+        margin-block: 3rem;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    section p{
+        max-width: 60ch;
+    }
+
+    .overview-section {
+        padding-inline: 0;
+    }
+
+    .two-column-section {
+        grid-template-columns: 1fr 50% 40% 1fr;
+        width: 100%;
+        text-align: left;
+        gap: 4rem;
+    }
+
+    .two-column-section h2{
+        text-align: left;
+    }
+    .two-column-section p {
+        max-width: 35ch;
+    }
+
+    .two-column-section>img {
+        position: relative;
+        left: -2rem;
+    }
+
+    .two-column-section>img {
+        grid-column: 1 /3;
+    }
+
+    .features__section {
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-block: 2rem;
+        padding-inline: 3rem
+    }
+
+    .sponsors>ul {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    section>p{
+        max-width: 60ch;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        padding-block: 5rem;
+    }
+
+    footer>ul {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .contact {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .attribution-section {
+        text-align: center;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-height: fit-content;
+        padding-block: 3rem;
+    }
+
+    footer>ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-inline: 2rem;
+        flex-wrap: wrap;
+        max-height: 5rem;
+        min-width: 100%;
+    }
 }
